@@ -26,7 +26,7 @@ export default function App () {
   return (
     <>
       <img src={logo} className='logo' alt='Logo de Coding Blog' />
-      <h1>My Coding Blog</h1>
+      <h1>My Coding Blog 🎉</h1>
       {loading == true && <Spin />}
       {articles.map(article => (
         <Card key={article.id} title={article.title}>
