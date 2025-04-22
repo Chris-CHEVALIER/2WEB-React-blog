@@ -1,14 +1,22 @@
 import { Modal } from 'antd'
 import ArticleForm from './ArticleForm'
 import { useState } from 'react'
+import { addArticle } from '../../Fire'
 
 export default function ArticleModal (props) {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
 
   const handleOk = () => {
-    alert('Titre : ' + title + '\nContenu : ' + content)
+    //alert('Titre : ' + title + '\nContenu : ' + content)
     //alert(`Titre : ${title}\nContent ${content}`)
+    let newArticle = {
+      "title" : title,
+      "content" : content,
+      "createdAt" : new Date(),
+      "comments": []
+    }
+    addArticle(newArticle)
     props.handleCancel()
     setTitle('')
     setContent('')
